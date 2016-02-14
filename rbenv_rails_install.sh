@@ -32,11 +32,14 @@ function install_rbenv(){
   echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> "$p_file"
   echo 'eval "$(rbenv init -)"' >> "$p_file"
   source $p_file
-  echo 'Done'
+  echo 'Install ruby-build'
+  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  source $p_file
+  echo "Done!"
 }
 
 function install_ruby_and_rails() {
-  echo 'To be implemented'
+ rbenv install ruby-2.3.0
 }
 
 function main(){
